@@ -2,7 +2,6 @@ import os
 import requests
 from dotenv import load_dotenv
 import argparse
-load_dotenv()
 
 def cut_http_s_in_url(link):
     ''' Function cut http:// or https:// schema's from link '''
@@ -55,7 +54,8 @@ def test_url_long_or_short(token, short_link):
     return response.ok
 
 if __name__ == "__main__":
-
+    load_dotenv()
+    
     parser = argparse.ArgumentParser(description='Convert longurl to bit.ly url')
     parser.add_argument('name', help='Long URL to convert')
     args = parser.parse_args()
